@@ -8,6 +8,7 @@ const saveBtn = document.querySelector("#save-btn");
 const friendsBtn = document.querySelector("#friends-btn");
 const left = document.querySelector(".left");
 const leftP = document.querySelector(".left-p");
+const widget = document.querySelector(".widget");
 
 let width = 130;
 
@@ -25,11 +26,23 @@ donateBtn.addEventListener("click", () => {
 				.querySelector(".progress-bar")
 				.setAttribute("style", `width: ${width}px;`);
 			donors.textContent++;
-			if (parseInt(left.textContent) >= 0) {
+			if (parseInt(left.textContent) >= 60) {
 				left.textContent =
 					parseInt(left.textContent) - donationValue[i];
+			} else if (
+				parseInt(left.textContent) <= 60 &&
+				parseInt(left.textContent) > 0
+			) {
+				leftP.textContent = "We're almost there!";
+				left.textContent =
+					parseInt(left.textContent) - donationValue[i];
+				console.log(parseInt(left.textContent));
 			} else {
+				console.log("congrats");
 				leftP.textContent = "The Donation Target has been reached!";
+				widget.textContent = "";
+				console.log(widget);
+				widget.style.border = "none";
 			}
 		} else {
 			donors.textContent = "42";
