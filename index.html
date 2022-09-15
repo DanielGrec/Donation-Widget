@@ -18,10 +18,70 @@
 			integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
 			crossorigin="anonymous"
 		></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap"
+			rel="stylesheet"
+		/>
 		<title>Donation Widget</title>
 	</head>
 	<body>
-		<div class="widget"></div>
+		<div class="container">
+			<div class="widget">
+				<div
+					class="progress"
+					data-bs-toggle="popover"
+					data-bs-content="$160 still needed for this project"
+					data-bs-custom-class="custom-popover"
+					data-bs-placement="top"
+					html="false"
+				>
+					<div
+						class="progress-bar bg-warning"
+						role="progressbar"
+						aria-valuenow="150"
+						aria-valuemin="0"
+						aria-valuemax="100"
+						style="width: 150px"
+					></div>
+				</div>
+				<div class="widget-content">
+					<p>
+						<span class="days-left">Only 3 days left </span>to fund
+						this project.
+					</p>
+					<p>
+						Join the <span class="donors">42</span> other donors
+						who have already supported this project. Every dollar
+						helps.
+					</p>
+					<div class="widget-buttons">
+						<input
+							type="number"
+							name="donation"
+							id="donation"
+							placeholder="$"
+							min="0"
+							max="1000"
+						/>
+						<button class="donate-btn">Donate</button>
+					</div>
+					<a href="#" class="question"
+						>Why give $<span class="amount"></span>?</a
+					>
+				</div>
+			</div>
+			<div class="buttons">
+				<button id="save-btn" class="outside-btn">
+					Save for later
+				</button>
+				<button id="friends-btn" class="outside-btn">
+					Tell your friends
+				</button>
+			</div>
+			<p class="saved-p"></p>
+		</div>
 		<script src="main.js"></script>
 	</body>
 </html>

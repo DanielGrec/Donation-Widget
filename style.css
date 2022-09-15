@@ -53,3 +53,144 @@ h6 {
 }
 
 /* ---------GENERAL STYLING--------- */
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #252422;
+	font-family: "Montserrat", sans-serif;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 450px;
+	padding: 2rem;
+}
+
+.widget {
+	background-color: #403d39;
+	border: 1px solid #ccc5b9;
+	border-radius: 0.6rem;
+}
+
+.widget-content {
+	padding: 2rem;
+	color: #fffcf2;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.widget-buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.progress {
+	max-width: 450px !important;
+	height: 2rem;
+	background-color: #fffcf2;
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.progress-bar {
+	max-width: 450px !important;
+	height: 2rem;
+	background-color: #eb5e28;
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+.progress:hover,
+.progress-bar:hover {
+	cursor: pointer;
+}
+
+.days-left {
+	color: #eb5e28;
+	font-weight: 700;
+}
+
+.donors {
+	font-weight: 700;
+}
+
+#donation,
+.donate-btn {
+	border: 1px solid #ccc5b9;
+	border-radius: 0.5rem;
+	width: 13.5rem;
+	padding: 1rem;
+	font-weight: 700;
+}
+
+.donate-btn {
+	color: #fffcf2;
+	background-color: green;
+	cursor: pointer;
+}
+.donate-btn:hover {
+	background-color: #fffcf2;
+	color: green;
+	border: 1px solid #fffcf2;
+}
+
+.question {
+	font-style: italic;
+	font-size: 1.4rem;
+	color: #eb5e28;
+	text-decoration: none;
+}
+
+.question:hover,
+.question:active {
+	color: #fffcf2;
+	font-weight: 700;
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 2rem;
+}
+
+.outside-btn {
+	border: 1px solid #ccc5b9;
+	border-radius: 0.6rem;
+	padding: 1rem 2rem;
+	background-color: #403d39;
+	color: #fffcf2;
+	font-weight: bold;
+	font-size: 1.4rem;
+	cursor: pointer;
+	width: 16rem;
+}
+.outside-btn:active,
+.outside-btn:hover {
+	background-color: #fffcf2;
+	color: #eb5e28;
+	border: 1px solid #fffcf2;
+}
+
+.custom-popover {
+	max-width: 450px;
+	background-color: #403d39;
+	padding: 1.5rem 2rem;
+	font-weight: 700;
+	color: #fffcf2;
+	border-radius: 0.6rem;
+}
+
+.saved-p {
+	margin-top: 2rem;
+	color: #fffcf2;
+	font-style: italic;
+}
+
+@media only screen and (min-width: 600px) {
+	.saved-p {
+		text-align: center;
+	}
+}
