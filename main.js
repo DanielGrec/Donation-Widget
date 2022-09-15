@@ -6,23 +6,12 @@ const donateBtn = document.querySelector(".donate-btn");
 const question = document.querySelector(".question");
 const saveBtn = document.querySelector("#save-btn");
 const friendsBtn = document.querySelector("#friends-btn");
-const popoverTriggerList = document.querySelectorAll(
-	'[data-bs-toggle="popover"]'
-);
-const popoverList = [...popoverTriggerList].map(
-	(popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
-);
+const left = document.querySelector(".left");
+const leftP = document.querySelector(".left-p");
 
-let popoverAttribute = document
-	.querySelector("[data-bs-content]")
-	.getAttribute("data-bs-content");
-
-let popoverValue = parseInt(popoverAttribute.slice(1, 4));
-let popoverTotal = 0;
 let width = 130;
 
 donateBtn.addEventListener("click", () => {
-	popoverTotal = popoverValue - parseInt(donation.value);
 	// create array to store input values intrdouced by user
 	let donationValue = [];
 	// push the input values into the array
@@ -36,12 +25,16 @@ donateBtn.addEventListener("click", () => {
 				.querySelector(".progress-bar")
 				.setAttribute("style", `width: ${width}px;`);
 			donors.textContent++;
+			if (parseInt(left.textContent) >= 0) {
+				left.textContent =
+					parseInt(left.textContent) - donationValue[i];
+			} else {
+				leftP.textContent = "The Donation Target has been reached!";
+			}
 		} else {
 			donors.textContent = "42";
 		}
 	}
-
-	popoverAttribute.textContent = `${popoverTotal} still needed for this project`;
 });
 
 donation.addEventListener("input", () => {
@@ -73,8 +66,3 @@ const url = getCurrentURL();
 friendsBtn.addEventListener("click", () => {
 	alert(`Copy this link to share with your friends:\n${url}`);
 });
-
-// let lastWidth = width + donationValue;
-// let newWidth = lastWidth + donationValue;
-
-// newWidth += donationValue;

@@ -90,6 +90,20 @@ body {
 	align-items: center;
 }
 
+.hover {
+	background-color: green;
+	border: 1px solid #ccc5b9;
+	border-radius: 0.6rem;
+	text-align: center;
+	color: #fffcf2;
+	padding: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.left {
+	font-weight: 700;
+}
+
 .progress {
 	width: 335px;
 	height: 2rem;
@@ -102,10 +116,6 @@ body {
 	height: 2rem;
 	background-color: #eb5e28;
 	border-radius: 0.5rem 0.5rem 0 0;
-}
-.progress:hover,
-.progress-bar:hover {
-	cursor: pointer;
 }
 
 .days-left {
@@ -173,15 +183,6 @@ body {
 	background-color: #fffcf2;
 	color: #eb5e28;
 	border: 1px solid #fffcf2;
-}
-
-.custom-popover {
-	max-width: 450px;
-	background-color: #403d39;
-	padding: 1.5rem 2rem;
-	font-weight: 700;
-	color: #fffcf2;
-	border-radius: 0.6rem;
 }
 
 .saved-p {
