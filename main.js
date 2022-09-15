@@ -20,23 +20,28 @@ let popoverAttribute = document
 let popoverValue = parseInt(popoverAttribute.slice(1, 4));
 let popoverTotal = 0;
 
+let width = 150;
+
 donateBtn.addEventListener("click", () => {
 	popoverTotal = popoverValue - parseInt(donation.value);
-	let width = 150;
-	let donationValue = parseInt(donation.value);
-	donationValue += donationValue;
-	let lastWidth = width + donationValue;
-	let newWidth = lastWidth + donationValue;
-	newWidth += donationValue;
-
-	if (donationValue > 0) {
-		document
-			.querySelector(".progress-bar")
-			.setAttribute("style", `width: ${newWidth}px;`);
-		donors.textContent++;
-	} else {
-		donors.textContent = "42";
+	// create array to store input values intrdouced by user
+	let donationValue = [];
+	// push the input values into the array
+	donationValue.push(parseInt(donation.value));
+	// for each value in the array
+	for (let i = 0; i < donationValue.length; i++) {
+		// add value to the width
+		width += donationValue[i];
+		if (donationValue[i] > 0) {
+			document
+				.querySelector(".progress-bar")
+				.setAttribute("style", `width: ${width}px;`);
+			donors.textContent++;
+		} else {
+			donors.textContent = "42";
+		}
 	}
+
 	popoverAttribute.textContent = `${popoverTotal} still needed for this project`;
 });
 
@@ -69,3 +74,8 @@ const url = getCurrentURL();
 friendsBtn.addEventListener("click", () => {
 	alert(`Copy this link to share with your friends:\n${url}`);
 });
+
+// let lastWidth = width + donationValue;
+// let newWidth = lastWidth + donationValue;
+
+// newWidth += donationValue;
