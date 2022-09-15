@@ -73,6 +73,7 @@ body {
 	background-color: #403d39;
 	border: 1px solid #ccc5b9;
 	border-radius: 0.6rem;
+	overflow: hidden;
 }
 
 .widget-content {
@@ -90,14 +91,14 @@ body {
 }
 
 .progress {
-	max-width: 450px !important;
+	width: 335px;
 	height: 2rem;
 	background-color: #fffcf2;
 	border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .progress-bar {
-	max-width: 450px !important;
+	width: 335px;
 	height: 2rem;
 	background-color: #eb5e28;
 	border-radius: 0.5rem 0.5rem 0 0;
@@ -192,5 +193,12 @@ body {
 @media only screen and (min-width: 600px) {
 	.saved-p {
 		text-align: center;
+	}
+	.progress,
+	.progress-bar {
+		width: 410px;
+	}
+	.container {
+		font-size: 2rem;
 	}
 }

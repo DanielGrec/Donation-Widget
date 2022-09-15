@@ -19,8 +19,7 @@ let popoverAttribute = document
 
 let popoverValue = parseInt(popoverAttribute.slice(1, 4));
 let popoverTotal = 0;
-
-let width = 150;
+let width = 130;
 
 donateBtn.addEventListener("click", () => {
 	popoverTotal = popoverValue - parseInt(donation.value);
@@ -32,7 +31,7 @@ donateBtn.addEventListener("click", () => {
 	for (let i = 0; i < donationValue.length; i++) {
 		// add value to the width
 		width += donationValue[i];
-		if (donationValue[i] > 0) {
+		if (donationValue[i] > 0 && donationValue[i] < 100) {
 			document
 				.querySelector(".progress-bar")
 				.setAttribute("style", `width: ${width}px;`);
