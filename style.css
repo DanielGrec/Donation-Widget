@@ -204,3 +204,18 @@ body {
 		font-size: 2rem;
 	}
 }
+
+@media only screen and (max-width: 360px) {
+	.container {
+		max-width: 320px;
+	}
+	.outside-btn {
+		font-size: 1.5rem;
+	}
+	.buttons {
+		gap: 1rem;
+	}
+	.widget-buttons {
+		gap: 1rem;
+	}
+}

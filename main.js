@@ -11,6 +11,7 @@ const leftP = document.querySelector(".left-p");
 const widget = document.querySelector(".widget");
 
 let width = 130;
+let donorNum = "42";
 
 donateBtn.addEventListener("click", () => {
 	// create array to store input values intrdouced by user
@@ -21,31 +22,33 @@ donateBtn.addEventListener("click", () => {
 	for (let i = 0; i < donationValue.length; i++) {
 		// add value to the width
 		width += donationValue[i];
-		if (donationValue[i] > 0 && donationValue[i] < 100) {
+		if (donationValue[i] > 0 && donationValue[i] <= 100) {
 			document
 				.querySelector(".progress-bar")
 				.setAttribute("style", `width: ${width}px;`);
-			donors.textContent++;
-			if (parseInt(left.textContent) >= 60) {
+			let donorNum = donors.textContent++;
+			if (parseInt(left.textContent) >= 90) {
 				left.textContent =
 					parseInt(left.textContent) - donationValue[i];
 			} else if (
-				parseInt(left.textContent) <= 60 &&
-				parseInt(left.textContent) > 0
+				parseInt(left.textContent) < 90 &&
+				parseInt(left.textContent) >= donationValue[i]
 			) {
 				leftP.textContent = "We're almost there!";
 				left.textContent =
 					parseInt(left.textContent) - donationValue[i];
 				console.log(parseInt(left.textContent));
-			} else {
-				console.log("congrats");
+			} else if (donationValue[i] > parseInt(left.textContent)) {
+				console.log(true);
 				leftP.textContent = "The Donation Target has been reached!";
 				widget.textContent = "";
-				console.log(widget);
 				widget.style.border = "none";
 			}
 		} else {
-			donors.textContent = "42";
+			alert(
+				"There is a donation limit of $100 because we think everyone should pitch in. Thank you for your understanding!"
+			);
+			donorNum;
 		}
 	}
 });
