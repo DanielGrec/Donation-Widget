@@ -152,6 +152,7 @@ body {
 	font-size: 1.4rem;
 	color: #eb5e28;
 	text-decoration: none;
+	align-self: flex-start;
 }
 
 .question:hover,
