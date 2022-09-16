@@ -26,7 +26,7 @@ donateBtn.addEventListener("click", () => {
 			document
 				.querySelector(".progress-bar")
 				.setAttribute("style", `width: ${width}px;`);
-			let donorNum = donors.textContent++;
+			donorNum += donors.textContent++;
 			if (parseInt(left.textContent) >= 90) {
 				left.textContent =
 					parseInt(left.textContent) - donationValue[i];
@@ -37,9 +37,7 @@ donateBtn.addEventListener("click", () => {
 				leftP.textContent = "We're almost there!";
 				left.textContent =
 					parseInt(left.textContent) - donationValue[i];
-				console.log(parseInt(left.textContent));
 			} else if (donationValue[i] > parseInt(left.textContent)) {
-				console.log(true);
 				leftP.textContent = "The Donation Target has been reached!";
 				widget.textContent = "";
 				widget.style.border = "none";
